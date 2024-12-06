@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        img {
+            width: 400px;
+        }
+
+    </style>
+</head>
+<body>
+    <img src="./images/zao.jpg" alt="图片">
+    <div>早安o(*￣▽￣*)ブ</div>
+    <script>
+        var Img = document.querySelector('img');
+        var Div = document.querySelector('div');
+        var date = new Date();
+        var H = date.getHours();
+        console.log(H);
+        if (H < 12 && H >= 4) {
+            Img.src = "./images/zao.jpg";
+            Div.innerHTML = "上午安o(*￣▽￣*)ブ";
+        } else if (H >= 12 && H <= 18) {
+            Img.src = "./images/wu.jpg";
+            Div.innerHTML = "下午安\(￣︶￣*\))";
+        } else {
+            Img.src = "./images/wan.jpg";
+            Div.innerHTML = "晚上安(｡･∀･)ﾉﾞ嗨";
+        }
+
+    </script>
+</body>
+</html>

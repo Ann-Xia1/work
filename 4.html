@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 500px;
+            margin: 0 auto;
+            display: flex;
+        }
+        .text {
+            background-image: url(./images/mess.png);
+            background-repeat: no-repeat;
+            width: 133px;
+            text-align: right;
+        }
+
+        .false {
+            background-image: url(./images/wrong.png);
+            background-repeat: no-repeat;
+            width: 133px;
+            text-align: right;
+        }
+
+        .ture {
+            background-image: url(./images/right.png);
+            background-repeat: no-repeat;
+            width: 133px;
+            text-align: right;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <label for="">
+            设置密码: <input type="password" class="pa" onblur="Pa()">
+        </label>
+        <p class="text">请输入登录密码</p>
+    </div>
+    <script>
+        var P1 = document.querySelector('.pa');
+        var Text = document.querySelector('.text');
+        var Img = document.querySelector('img');
+        function Pa() {
+            if (P1.value.length < 6 ||P1.value.length > 16){
+                Text.className = 'false' ;
+                Text.innerHTML = '请输入正确密码';
+            } else {
+                Text.className = 'ture' ;
+                Text.innerHTML = '密码长度正确'
+            }
+        }
+    </script>
+</body>
+</html>

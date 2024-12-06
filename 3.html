@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .bg {
+            margin: 0 auto;
+            width: 102px;
+            height: 49px;
+        }
+
+        .bg ul {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .bg ul li {
+            list-style: none;
+            width: 24px;
+            height: 24px;
+            border: 1px solid #ccc;
+            background-image: url(./images/sprite.png);
+            background-repeat: no-repeat;
+            background-position: 0 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <script>
+        var li = document.querySelectorAll("li");
+			for (var i = 0; i < li.length; i++) {
+				var index = i * 44;
+				li[i].style.backgroundPosition = "0-" + index + "px";
+			}
+    </script>
+</body>
+</html>

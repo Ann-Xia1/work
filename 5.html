@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            width: 300px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        ul li {
+            list-style: none;
+            margin-bottom: 10px;
+            
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <ul>
+            <span>爱好选择</span>
+            <li><input type="checkbox" name="hobby" />看书</li>
+            <li><input type="checkbox" name="hobby" />游戏</li>
+            <li><input type="checkbox" name="hobby" />跑步</li>
+            <li><input type="checkbox" name="hobby" />散步</li>
+            <li><input type="checkbox" name="hobby" />听歌</li>
+            <li><input type="checkbox" name="hobby" />绘画</li>
+            <li><input type="checkbox" name="hobby" />舞蹈</li>
+            <li><input type="checkbox" name="hobby" />篮球</li>
+            <li><input type="checkbox" name="hobby" />足球</li>
+        </ul>
+        <input type="button" onclick="setAll()" value="全选" id="qx" />
+        <input type="button" onclick="unsetAll()" value="全不选" id="qbx" />
+        <input type="button" onclick="setOthers()" value="反选" id="fx" />
+    </div>
+</body>
+<script>
+    function setAll() {
+        var hb = document.getElementsByName("hobby");
+        for (var i = 0; i < hb.length; i++) {
+            hb[i].checked = true;
+        }
+    }
+    function unsetAll() {
+        var hb = document.getElementsByName("hobby");
+        for (var i = 0; i < hb.length; i++) {
+            hb[i].checked = false;
+        }
+    }
+    function setOthers() {
+        var hb = document.getElementsByName("hobby");
+        for (var i = 0; i < hb.length; i++) {
+            if (hb[i].checked == false)
+                hb[i].checked = true;
+            else
+                hb[i].checked = false;
+        }
+    }
+</script>
+</html>
